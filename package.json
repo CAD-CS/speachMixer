@@ -3,19 +3,18 @@
   "version": "1.0.0",
   "description": "What to do languages sound like to non-natives?",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
+  "type": "module",
   "scripts": {
-    "test": "mocha --require ts-node/register test/**.spec.ts"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/chai": "^4.3.16",
+    "@types/jest": "^29.5.12",
     "@types/mocha": "^10.0.6",
-    "chai": "^5.1.1",
-    "mocha": "^10.4.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   }
