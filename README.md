@@ -1,10 +1,7 @@
 # speachMixer
 
-TOBE updated 
+# Possible useful resources
 
+https://en.wikipedia.org/wiki/ESpeak
 
-- Frequency analyzer
-
-- Mixer-upper
-
-- TTS
+https://cloud.google.com/text-to-speech/docs/libraries
