@@ -1,5 +1,3 @@
-import Parser from "./src/Parser";
+import IO from "./src/IO";
 
-const parser = new Parser();
-
-parser.parse(" a bc d e");
+const io = new IO();
