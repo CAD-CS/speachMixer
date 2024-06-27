@@ -17,27 +17,37 @@ export class Analyzer {
   constructor(rawData: string) {
     this.phonemes = rawData.replace(" ", "").split("");
     this.words = rawData.split(" ");
-    this.count(this.words, this.wordStatistics);
-    this.count(this.phonemes, this.phonemeStatistics);
+    Analyzer.count(this.words, this.wordStatistics);
+    Analyzer.count(this.phonemes, this.phonemeStatistics);
   }
 
-  count(data: string[], statistics: DataPoint[]) {
+  getAnalysis(): Phonology {
+    return {
+      wordFreq: this.wordStatistics,
+      phonemeFreq: this.phonemeStatistics,
+    };
+  }
+
+  static count(data: string[], statistics: DataPoint[]): DataPoint[] {
     for (var datum of data) {
       this.find(datum, statistics);
     }
-    let size: number = statistics.length;
+    let size: number = data.length;
     for (var datapoint of statistics) {
       datapoint.num /= size;
     }
+    return statistics;
   }
 
-  find(datum: string, statistics: DataPoint[]) {
+  static find(datum: string, statistics: DataPoint[]): DataPoint[] {
+    if (datum === "") return statistics;
     for (var datapoint of statistics) {
       if (datum === datapoint.value) {
         datapoint.num++;
-        return;
+        return statistics;
       }
     }
     statistics.push({ value: datum, num: 1 });
+    return statistics;
   }
 }

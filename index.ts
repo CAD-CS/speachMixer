@@ -1,3 +1,3 @@
-import IO from "./src/IO";
+import InputOutput from "./src/InputOutput";
 
-const io = new IO();
+const io = new InputOutput();
